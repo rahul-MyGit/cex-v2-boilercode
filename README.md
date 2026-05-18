@@ -127,11 +127,11 @@ interface EngineRequest {
   correlationId: string;
   responseQueue: string;
   type:
-    | "create_order"
-    | "get_depth"
-    | "get_user_balance"
-    | "get_order"
-    | "cancel_order";
+    | 'create_order'
+    | 'get_depth'
+    | 'get_user_balance'
+    | 'get_order'
+    | 'cancel_order';
   payload: Record<string, unknown>;
 }
 ```
@@ -301,13 +301,13 @@ Implement:
 A buy limit order can match with an ask when:
 
 ```ts
-buyPrice >= askPrice
+buyPrice >= askPrice;
 ```
 
 A sell limit order can match with a bid when:
 
 ```ts
-sellPrice <= bidPrice
+sellPrice <= bidPrice;
 ```
 
 Market orders should match with the best available opposite side prices until filled or the book is empty.
